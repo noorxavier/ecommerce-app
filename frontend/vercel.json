@@ -1,10 +1,15 @@
 {
-    "rewrites": [
-      {
-        "source": "/(.*)",
-        "destination": "/"
+  "builds": [
+    {
+      "src": "vite.config.js",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
       }
-    ]
-  }
-
-
+    }
+  ],
+  "ignoreCommand": "echo 'Skipping non-frontend folders like admin'",
+  "routes": [
+    { "src": "/(.*)", "dest": "/index.html" }
+  ]
+}
