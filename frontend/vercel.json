@@ -1,15 +1,8 @@
 {
-  "builds": [
-    {
-      "src": "vite.config.js",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "dist"
+    "rewrites": [
+      {
+        "source": "/(.*)",
+        "destination": "/"
       }
-    }
-  ],
-  "ignoreCommand": "echo 'Skipping non-frontend folders like admin'",
-  "routes": [
-    { "src": "/(.*)", "dest": "/index.html" }
-  ]
-}
+    ]
+  }
